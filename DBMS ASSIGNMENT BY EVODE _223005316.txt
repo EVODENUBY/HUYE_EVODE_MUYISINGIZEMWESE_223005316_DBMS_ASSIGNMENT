@@ -1,0 +1,212 @@
+Enter password: ****************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 326
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA( ID_NUMBER INT(16),firstName char(20), lastName char(20),gender char(10),province char(20),district char(20), sector char(20), cell char(20),Email char(100), TELEPHONE INT(12));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+mysql> DESC NGOMA;
++-----------+-----------+------+-----+---------+-------+
+| Field     | Type      | Null | Key | Default | Extra |
++-----------+-----------+------+-----+---------+-------+
+| ID_NUMBER | int       | YES  |     | NULL    |       |
+| firstName | char(20)  | YES  |     | NULL    |       |
+| lastName  | char(20)  | YES  |     | NULL    |       |
+| gender    | char(10)  | YES  |     | NULL    |       |
+| province  | char(20)  | YES  |     | NULL    |       |
+| district  | char(20)  | YES  |     | NULL    |       |
+| sector    | char(20)  | YES  |     | NULL    |       |
+| cell      | char(20)  | YES  |     | NULL    |       |
+| Email     | char(100) | YES  |     | NULL    |       |
+| TELEPHONE | int       | YES  |     | NULL    |       |
++-----------+-----------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1200380097272049','EVODE', 'NUBY', 'MALE', 'NORTHERN','MUSANZE','MUHOZA','ICYIZERE','evodepro@gmail.com','0729525550'),('120038009393078','NELLY', 'ADOLPHE', 'FEMALE','WESTERN','RUSIZI','MUKERI','UBWISUNGANE','evo@gmail.com','0791783300');
+Query OK, 2 rows affected, 2 warnings (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 2
+
+mysql> SELECT * FROM NGOMA;
++------------+-----------+----------+--------+----------+----------+--------+-------------+--------------------+-----------+
+| ID_NUMBER  | firstName | lastName | gender | province | district | sector | cell        | Email              | TELEPHONE |
++------------+-----------+----------+--------+----------+----------+--------+-------------+--------------------+-----------+
+| 2147483647 | EVODE     | NUBY     | MALE   | NORTHERN | MUSANZE  | MUHOZA | ICYIZERE    | evodepro@gmail.com | 729525550 |
+| 2147483647 | NELLY     | ADOLPHE  | FEMALE | WESTERN  | RUSIZI   | MUKERI | UBWISUNGANE | evo@gmail.com      | 791783300 |
++------------+-----------+----------+--------+----------+----------+--------+-------------+--------------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1200980023232049','MUCYO', 'SANO', 'MALE', 'NORTHERN','GICUMBI','BYUMBA','kivugiza','emmy@gmail.com','0729528950'),('1200788009393058','NDAGIJIMANA', 'BERNARD', 'MALE','WESTERN','NGORORERO','CURANGA','GASHIRU','sano@gmail.com','078177300'),('1205680023232000','VITAL', 'ALLIANCE', 'MALE', 'NORTHERN','RULINDO','MUKERI','NYUNDO','vital@gmail.com','0733567950'),('1200688119393078','NDAGIJIMANA', 'hessy', 'FEMALE','SOUTHERN','HUYE','TUMBA','MUKONI','hessy@gmail.com','079007300');
+Query OK, 4 rows affected, 4 warnings (0.00 sec)
+Records: 4  Duplicates: 0  Warnings: 4
+
+mysql> select * from ngoma;
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+| ID_NUMBER  | firstName   | lastName | gender | province | district  | sector  | cell        | Email              | TELEPHONE |
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN | MUSANZE   | MUHOZA  | ICYIZERE    | evodepro@gmail.com | 729525550 |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN  | RUSIZI    | MUKERI  | UBWISUNGANE | evo@gmail.com      | 791783300 |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN | GICUMBI   | BYUMBA  | kivugiza    | emmy@gmail.com     | 729528950 |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN  | NGORORERO | CURANGA | GASHIRU     | sano@gmail.com     |  78177300 |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN | RULINDO   | MUKERI  | NYUNDO      | vital@gmail.com    | 733567950 |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN | HUYE      | TUMBA   | MUKONI      | hessy@gmail.com    |  79007300 |
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12009802232239','ANGELA', 'gigi', 'FEMALE', 'NORTHERN','GICUMBI','BUKURE','gikonko','gigi@gmail.com','0789528950');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> select * from ngoma;
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+| ID_NUMBER  | firstName   | lastName | gender | province | district  | sector  | cell        | Email              | TELEPHONE |
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN | MUSANZE   | MUHOZA  | ICYIZERE    | evodepro@gmail.com | 729525550 |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN  | RUSIZI    | MUKERI  | UBWISUNGANE | evo@gmail.com      | 791783300 |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN | GICUMBI   | BYUMBA  | kivugiza    | emmy@gmail.com     | 729528950 |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN  | NGORORERO | CURANGA | GASHIRU     | sano@gmail.com     |  78177300 |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN | RULINDO   | MUKERI  | NYUNDO      | vital@gmail.com    | 733567950 |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN | HUYE      | TUMBA   | MUKONI      | hessy@gmail.com    |  79007300 |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN | GICUMBI   | BUKURE  | gikonko     | gigi@gmail.com     | 789528950 |
++------------+-------------+----------+--------+----------+-----------+---------+-------------+--------------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('120078393458','UMULISA', 'josiane', 'female','NORTHERN','GICUMBI','CYUMBA','rubaya','adolphe@gmail.com','0788989899'),('1201280023902000','MUTONI', 'ALLY', 'FEMALE', 'SOUTHERN','HUYE','TUMBA','bukavu','hirwa@gmail.com','07334545950'),('120068813433078','EMMANUEL', 'HIRWA', 'MALE','KIGALI CITY','GASABO','kinyinya','kigali','henryy@gmail.com','072207378');
+Query OK, 3 rows affected, 4 warnings (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 4
+
+mysql> select * from ngoma;
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+| ID_NUMBER  | firstName   | lastName | gender | province    | district  | sector   | cell        | Email              | TELEPHONE  |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN    | MUSANZE   | MUHOZA   | ICYIZERE    | evodepro@gmail.com |  729525550 |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN     | RUSIZI    | MUKERI   | UBWISUNGANE | evo@gmail.com      |  791783300 |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN    | GICUMBI   | BYUMBA   | kivugiza    | emmy@gmail.com     |  729528950 |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN     | NGORORERO | CURANGA  | GASHIRU     | sano@gmail.com     |   78177300 |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN    | RULINDO   | MUKERI   | NYUNDO      | vital@gmail.com    |  733567950 |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN    | HUYE      | TUMBA    | MUKONI      | hessy@gmail.com    |   79007300 |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN    | GICUMBI   | BUKURE   | gikonko     | gigi@gmail.com     |  789528950 |
+| 2147483647 | UMULISA     | josiane  | female | NORTHERN    | GICUMBI   | CYUMBA   | rubaya      | adolphe@gmail.com  |  788989899 |
+| 2147483647 | MUTONI      | ALLY     | FEMALE | SOUTHERN    | HUYE      | TUMBA    | bukavu      | hirwa@gmail.com    | 2147483647 |
+| 2147483647 | EMMANUEL    | HIRWA    | MALE   | KIGALI CITY | GASABO    | kinyinya | kigali      | henryy@gmail.com   |   72207378 |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD COLUMN OCCUPATION CHAR(50);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+| ID_NUMBER  | firstName   | lastName | gender | province    | district  | sector   | cell        | Email              | TELEPHONE  | OCCUPATION |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN    | MUSANZE   | MUHOZA   | ICYIZERE    | evodepro@gmail.com |  729525550 | NULL       |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN     | RUSIZI    | MUKERI   | UBWISUNGANE | evo@gmail.com      |  791783300 | NULL       |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN    | GICUMBI   | BYUMBA   | kivugiza    | emmy@gmail.com     |  729528950 | NULL       |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN     | NGORORERO | CURANGA  | GASHIRU     | sano@gmail.com     |   78177300 | NULL       |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN    | RULINDO   | MUKERI   | NYUNDO      | vital@gmail.com    |  733567950 | NULL       |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN    | HUYE      | TUMBA    | MUKONI      | hessy@gmail.com    |   79007300 | NULL       |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN    | GICUMBI   | BUKURE   | gikonko     | gigi@gmail.com     |  789528950 | NULL       |
+| 2147483647 | UMULISA     | josiane  | female | NORTHERN    | GICUMBI   | CYUMBA   | rubaya      | adolphe@gmail.com  |  788989899 | NULL       |
+| 2147483647 | MUTONI      | ALLY     | FEMALE | SOUTHERN    | HUYE      | TUMBA    | bukavu      | hirwa@gmail.com    | 2147483647 | NULL       |
+| 2147483647 | EMMANUEL    | HIRWA    | MALE   | KIGALI CITY | GASABO    | kinyinya | kigali      | henryy@gmail.com   |   72207378 | NULL       |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET OCCUPATION = 'NURSES' WHERE province ='NORTHERN';
+Query OK, 5 rows affected (0.00 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+| ID_NUMBER  | firstName   | lastName | gender | province    | district  | sector   | cell        | Email              | TELEPHONE  | OCCUPATION |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN    | MUSANZE   | MUHOZA   | ICYIZERE    | evodepro@gmail.com |  729525550 | NURSES     |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN     | RUSIZI    | MUKERI   | UBWISUNGANE | evo@gmail.com      |  791783300 | NULL       |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN    | GICUMBI   | BYUMBA   | kivugiza    | emmy@gmail.com     |  729528950 | NURSES     |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN     | NGORORERO | CURANGA  | GASHIRU     | sano@gmail.com     |   78177300 | NULL       |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN    | RULINDO   | MUKERI   | NYUNDO      | vital@gmail.com    |  733567950 | NURSES     |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN    | HUYE      | TUMBA    | MUKONI      | hessy@gmail.com    |   79007300 | NULL       |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN    | GICUMBI   | BUKURE   | gikonko     | gigi@gmail.com     |  789528950 | NURSES     |
+| 2147483647 | UMULISA     | josiane  | female | NORTHERN    | GICUMBI   | CYUMBA   | rubaya      | adolphe@gmail.com  |  788989899 | NURSES     |
+| 2147483647 | MUTONI      | ALLY     | FEMALE | SOUTHERN    | HUYE      | TUMBA    | bukavu      | hirwa@gmail.com    | 2147483647 | NULL       |
+| 2147483647 | EMMANUEL    | HIRWA    | MALE   | KIGALI CITY | GASABO    | kinyinya | kigali      | henryy@gmail.com   |   72207378 | NULL       |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP COLUMN OCCUPATION;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+| ID_NUMBER  | firstName   | lastName | gender | province    | district  | sector   | cell        | Email              | TELEPHONE  |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN    | MUSANZE   | MUHOZA   | ICYIZERE    | evodepro@gmail.com |  729525550 |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN     | RUSIZI    | MUKERI   | UBWISUNGANE | evo@gmail.com      |  791783300 |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN    | GICUMBI   | BYUMBA   | kivugiza    | emmy@gmail.com     |  729528950 |
+| 2147483647 | NDAGIJIMANA | BERNARD  | MALE   | WESTERN     | NGORORERO | CURANGA  | GASHIRU     | sano@gmail.com     |   78177300 |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN    | RULINDO   | MUKERI   | NYUNDO      | vital@gmail.com    |  733567950 |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN    | HUYE      | TUMBA    | MUKONI      | hessy@gmail.com    |   79007300 |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN    | GICUMBI   | BUKURE   | gikonko     | gigi@gmail.com     |  789528950 |
+| 2147483647 | UMULISA     | josiane  | female | NORTHERN    | GICUMBI   | CYUMBA   | rubaya      | adolphe@gmail.com  |  788989899 |
+| 2147483647 | MUTONI      | ALLY     | FEMALE | SOUTHERN    | HUYE      | TUMBA    | bukavu      | hirwa@gmail.com    | 2147483647 |
+| 2147483647 | EMMANUEL    | HIRWA    | MALE   | KIGALI CITY | GASABO    | kinyinya | kigali      | henryy@gmail.com   |   72207378 |
++------------+-------------+----------+--------+-------------+-----------+----------+-------------+--------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM NGOMA WHERE GENDER= 'MALE' AND PROVINCE='NORTHERN';
++------------+-----------+----------+--------+----------+----------+--------+----------+--------------------+-----------+
+| ID_NUMBER  | firstName | lastName | gender | province | district | sector | cell     | Email              | TELEPHONE |
++------------+-----------+----------+--------+----------+----------+--------+----------+--------------------+-----------+
+| 2147483647 | EVODE     | NUBY     | MALE   | NORTHERN | MUSANZE  | MUHOZA | ICYIZERE | evodepro@gmail.com | 729525550 |
+| 2147483647 | MUCYO     | SANO     | MALE   | NORTHERN | GICUMBI  | BYUMBA | kivugiza | emmy@gmail.com     | 729528950 |
+| 2147483647 | VITAL     | ALLIANCE | MALE   | NORTHERN | RULINDO  | MUKERI | NYUNDO   | vital@gmail.com    | 733567950 |
++------------+-----------+----------+--------+----------+----------+--------+----------+--------------------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM NGOMA WHERE GENDER= 'FEMALE' OR PROVINCE='NORTHERN';
++------------+-------------+----------+--------+----------+----------+--------+-------------+--------------------+------------+
+| ID_NUMBER  | firstName   | lastName | gender | province | district | sector | cell        | Email              | TELEPHONE  |
++------------+-------------+----------+--------+----------+----------+--------+-------------+--------------------+------------+
+| 2147483647 | EVODE       | NUBY     | MALE   | NORTHERN | MUSANZE  | MUHOZA | ICYIZERE    | evodepro@gmail.com |  729525550 |
+| 2147483647 | NELLY       | ADOLPHE  | FEMALE | WESTERN  | RUSIZI   | MUKERI | UBWISUNGANE | evo@gmail.com      |  791783300 |
+| 2147483647 | MUCYO       | SANO     | MALE   | NORTHERN | GICUMBI  | BYUMBA | kivugiza    | emmy@gmail.com     |  729528950 |
+| 2147483647 | VITAL       | ALLIANCE | MALE   | NORTHERN | RULINDO  | MUKERI | NYUNDO      | vital@gmail.com    |  733567950 |
+| 2147483647 | NDAGIJIMANA | hessy    | FEMALE | SOUTHERN | HUYE     | TUMBA  | MUKONI      | hessy@gmail.com    |   79007300 |
+| 2147483647 | ANGELA      | gigi     | FEMALE | NORTHERN | GICUMBI  | BUKURE | gikonko     | gigi@gmail.com     |  789528950 |
+| 2147483647 | UMULISA     | josiane  | female | NORTHERN | GICUMBI  | CYUMBA | rubaya      | adolphe@gmail.com  |  788989899 |
+| 2147483647 | MUTONI      | ALLY     | FEMALE | SOUTHERN | HUYE     | TUMBA  | bukavu      | hirwa@gmail.com    | 2147483647 |
++------------+-------------+----------+--------+----------+----------+--------+-------------+--------------------+------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT firstName, lastName, Email, TELEPHONE FROM NGOMA;
++-------------+----------+--------------------+------------+
+| firstName   | lastName | Email              | TELEPHONE  |
++-------------+----------+--------------------+------------+
+| EVODE       | NUBY     | evodepro@gmail.com |  729525550 |
+| NELLY       | ADOLPHE  | evo@gmail.com      |  791783300 |
+| MUCYO       | SANO     | emmy@gmail.com     |  729528950 |
+| NDAGIJIMANA | BERNARD  | sano@gmail.com     |   78177300 |
+| VITAL       | ALLIANCE | vital@gmail.com    |  733567950 |
+| NDAGIJIMANA | hessy    | hessy@gmail.com    |   79007300 |
+| ANGELA      | gigi     | gigi@gmail.com     |  789528950 |
+| UMULISA     | josiane  | adolphe@gmail.com  |  788989899 |
+| MUTONI      | ALLY     | hirwa@gmail.com    | 2147483647 |
+| EMMANUEL    | HIRWA    | henryy@gmail.com   |   72207378 |
++-------------+----------+--------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql>
